@@ -1,0 +1,28 @@
+<ion-header >
+  <ion-toolbar>
+      <input (keydown.enter)="$event.preventDefault()" placeholder="نقطة الانطلاق" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content [fullscreen]="true" color="light">
+
+  <agm-map 
+  [latitude]="latitude" 
+  [longitude]="longitude" 
+  [zoom]="zoom" >
+    <agm-marker 
+    [latitude]="latitude"  [markerDraggable]="true"
+    [longitude]="longitude" (dragEnd)="markerDragEnd($event)"></agm-marker>
+  </agm-map>
+  <ion-fab  *ngIf="!error">
+    <ion-fab-button class="flex-row" (click)="nextStepDestination()">
+      <ion-icon name="ban-outline" size="large"></ion-icon>
+    </ion-fab-button> 
+  </ion-fab>
+  <ion-fab *ngIf="error">
+    <ion-fab-button class="flex-row" (click)="nextStepDestination()">
+      <ion-icon name="arrow-forward-outline" size="large"></ion-icon>
+    </ion-fab-button> 
+  </ion-fab>
+</ion-content> 
+

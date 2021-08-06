@@ -1,0 +1,33 @@
+ion-toolbar{
+    background: #7842a5;
+}
+
+ion-fab{
+    ion-fab-button{
+        width: 5rem;
+        height: 5rem;
+        --border-radius: 1rem;
+        --background: #7842a5;
+    }
+}
+
+ion-card{
+    ion-card-subtitle{
+        color: white;
+        direction: ltr;
+    }
+    ion-label{
+        color: white;
+    }
+    --background: #7842a5 !important;
+}
+.permitted-price{
+    background-color: #f2f2f2;
+    // box-shadow: 10px 15px 15px #ccc;
+    .header{
+        background-color: rgb(255, 83, 83);
+        ion-label{
+            color: #fff;
+        }
+    }
+}

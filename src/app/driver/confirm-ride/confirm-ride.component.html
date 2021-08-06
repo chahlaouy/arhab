@@ -1,0 +1,156 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title class="grey-100">
+      تأكيد الرحلة 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class=" bg-white">
+
+  
+  
+  <ion-card color="danger" *ngIf="errorConfirmingRide == 'error'">
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ion-icon name="close-outline" color="light"></ion-icon>
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-item>
+          <ion-label color="light">
+             هناك خطأ يرجى المحاولة مرة أخرى
+          </ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/driver/add/ride-source']" lines="none">
+          <ion-button color="light">
+            أعد المحاولة
+          </ion-button>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card color="success" *ngIf="errorConfirmingRide == 'success'">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-item>
+          <ion-icon name="checkmark-done-outline" color="warning" slot="start" size="large"></ion-icon>
+          <ion-label color="light">
+            تم تسجيل البيانات بنجاح
+          </ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/driver/dashboard']">
+          <ion-label color="light">
+            الصفحة الريسية
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{ rideInfo.rideSource.adminAreaLevel1 }}, {{ rideInfo.rideSource.locality }}
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-item>
+          <ion-icon name="pin-outline" color="warning" slot="start"></ion-icon>
+          <ion-label color="light">
+            مكان المغادرة
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{ rideInfo.rideDestination.adminAreaLevel1 }}, {{ rideInfo.rideDestination.locality }}
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-item>
+          <ion-icon name="golf-outline" color="warning" slot="start"></ion-icon>
+          <ion-label color="light">
+            مكان الوصول
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{rideInfo.rideDistance.text}}
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-item>
+          <ion-icon name="analytics-outline" color="warning" slot="start"></ion-icon>
+          <ion-label color="light">
+            المسافة 
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{rideInfo.rideAverageDuration.text}}
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-item>
+          <ion-icon name="timer-outline" color="warning" slot="start"></ion-icon>
+          <ion-label color="light">
+            متوسط ​​الوقت 
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{rideInfo.rideNumberOfSeats}}
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-item>
+          <ion-icon name="people-outline" color="warning" slot="start"></ion-icon>
+          <ion-label color="light">
+            عدد المقاعد 
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{rideInfo.ridePrice}} RSA
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-item class="pt-2">
+          <ion-icon name="cash-outline" color="warning" slot="start"></ion-icon>
+          <ion-label color="light">
+            السعر  
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+   
+  </ion-card>
+
+  <!-- <div class="flex item-center justify-end">
+    <ion-fab>
+      <ion-fab-button class="flex-row mt-5 mr-2" (click)="presentLoading()">
+        تأكيد
+      </ion-fab-button> 
+    </ion-fab>
+  </div> -->
+  <ion-button color="warning" size="large" expand="block" (click)="presentLoading()">تأكيد</ion-button>
+</ion-content> 

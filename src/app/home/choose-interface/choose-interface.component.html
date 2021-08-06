@@ -1,0 +1,54 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-button [routerLink]="['/home']" slot="end" color="light">
+      <ion-label>
+        عودة
+      </ion-label>
+    </ion-button>
+    <ion-title class="grey-100">
+      صفحة التسجيل
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <div class="flex item-center" style="height: 100%; width: 100%;">
+    <div style="width: 100%;">
+      
+      <ion-button expand="block" size="large" [routerLink]="['/driver/register']">
+        <ion-label>استمرار كسائق</ion-label>
+        <ion-icon name="car" slot="start"></ion-icon>
+      </ion-button>
+      <ion-button expand="block" size="large" [routerLink]="['/passenger/register']" class="mt-5">
+        <ion-label>استمرار كراكب</ion-label>
+        <ion-icon name="person" slot="start"></ion-icon> 
+      </ion-button>
+      <!-- <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            استمرار كسائق
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button [routerLink]="['/driver/register']">
+            تسجيل
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            استمرار كراكب
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button color="tertiary" [routerLink]="['/passenger/register']">
+            تسجيل
+          </ion-button>
+        </ion-card-content>
+      </ion-card> -->
+    </div>
+  </div>
+</ion-content> 
+

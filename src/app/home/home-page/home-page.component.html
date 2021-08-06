@@ -1,0 +1,217 @@
+<ion-content [fullscreen]="true">
+  <div class="wrapper">
+    <div class="overlay-wrapper"></div>
+    <ion-header class="ion-no-border"> 
+      <ion-toolbar>
+        <div class="flex item-center justify-between mt-3">
+          <ion-button slot="start" class="box-none" style="--background: transparent">
+            <ion-icon name="notifications-outline" color="light"></ion-icon>
+          </ion-button>
+          <div>
+            <span class="text-md grey-100">إرحب</span>
+            <!-- <span class="text-md grey-100">لاتوقف</span> -->
+          </div>
+          
+          <ion-buttons dir="ltr">
+            <ion-menu-button menu="main-menu">
+              <ion-icon name="apps" color="light"></ion-icon>
+            </ion-menu-button>
+          </ion-buttons>
+        </div> 
+        <div class="px-2">
+
+          <div class="mt-5">
+            مرحبا بكم في تطبيقنا، إرحب
+            خدمات متنوعة لتوصيل الاشخاص  
+          </div>
+          <div class="mt-5">
+            <ion-button color="light">
+              أحدث الإعلانات
+            </ion-button>
+            <ion-button color="dark">
+              معرفة المزيد عن خدماتنا
+            </ion-button>
+          </div>
+        </div>
+      </ion-toolbar>
+    </ion-header>
+    <div class="flex justify-between item-center">
+      <ion-card class="flex-1">
+        <ion-card-header>
+          <ion-card-content>
+            <div class="flex-row justify-center item-center">
+              <ion-fab-button color="tertiary" type="button" [routerLink]="['/home/rides-list']">
+                <ion-icon name="car-sport" color="light"></ion-icon>
+              </ion-fab-button>
+            </div>
+            <div class="flex-row justify-center item-center mt-2">
+              <h1 class="text-md">
+                إرحب
+                </h1>
+            </div>
+          </ion-card-content>
+        </ion-card-header>
+      </ion-card>
+      <!-- <ion-card class="flex-1">
+        <ion-card-header>
+          <ion-card-content>
+            <div class="flex-row justify-center item-center">
+              <ion-fab-button color="warning" type="button">
+                <ion-icon name="bag-handle" color="light"></ion-icon>
+              </ion-fab-button>
+            </div>
+            <div class="flex-row justify-center item-center mt-2">
+              <h1 class="text-md text-center">توصيل غرض</h1>
+            </div>
+          </ion-card-content>
+        </ion-card-header>
+      </ion-card> -->
+    </div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>
+          احجز مشوار
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ul class="list-rides">
+          <li class="grey-700 py-2">
+            <ion-item class="grey-900">
+              <ion-icon name="location-outline" slot="end" class="grey-700"></ion-icon>
+              <ion-label>موقعك الحالي</ion-label>
+            </ion-item> 
+            
+          </li>
+          <li class="grey-700 py-2">
+            <ion-item class="grey-600">
+              <ion-icon name="search" slot="end"></ion-icon>
+              <ion-label>الي اين تود الذهاب</ion-label>
+            </ion-item>
+          </li>
+        </ul>
+        <ion-button expand="block" color="warning" (click)="filterHomeDestination()">
+          حدد نقطة الوصول
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="main-card">
+      <ion-card-header>
+        <h3 class="yellow-500">أحدث الإعلانات</h3>
+      </ion-card-header>
+      <ion-card-content class="card-content-no-padding">
+        <ion-slides [options]="sliderConfig">
+          <ion-slide *ngFor="let ride of rides">
+            <ion-card class="one">
+              <div class="overlay"></div>
+              <ion-card-content>      
+                <ion-item lines="none">
+                  <ion-icon name="pin-outline" slot="start" size="small"></ion-icon>
+                  <ion-label> 
+                    <!-- {{ride.details.depart}} :  -->
+                    jeddah, La mecque
+                    <!-- <span style="color: rgb(86, 97, 252)">11:30</span> -->
+                  </ion-label>
+                </ion-item>
+                <!-- <ion-item lines="none">
+                  <ion-icon name="golf-outline" slot="start" size="small" ></ion-icon>
+                  <ion-label> 
+                    <span style="color: rgb(86, 97, 252)">14:30</span> </ion-label>
+                </ion-item> -->
+                <ion-item lines="none">
+                  <ion-icon name="cash-outline" slot="start" size="small" ></ion-icon>
+                  <ion-label>
+                    <div class="flex">
+                      <span>RSA/87</span>
+                    </div>
+                  </ion-label> 
+                </ion-item>
+                <ion-item>
+                  <div class="flex">
+                    <div style="margin-left: 10px;">
+                      <img src="../../assets/avatar.png" style="width: 50px; height: 50px; border-radius: 25px">
+                    </div>
+                    <div>
+                      <h4>John</h4>
+                      <h6> 25 y/o</h6>
+                    </div>
+                    
+                  </div>
+                </ion-item>
+                <ion-chip>
+                  <ion-label>المزيد من التفاصيل</ion-label>
+                  <ion-icon name="chevron-back" color="dark"></ion-icon>
+                </ion-chip>
+
+              </ion-card-content>
+
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+        <ion-item lines="none" class="see-more" [routerLink]="['/home/rides-list']">
+          <ion-label>
+            رؤية المزيد من الاعلانات
+          </ion-label>
+          <ion-fab-button color="light" size="small">
+
+            <ion-icon name="chevron-back"></ion-icon>
+          </ion-fab-button>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- <div class="features">
+      <ion-list lines="none">
+        <div class="not">
+          <h4>احصل على أحدث الميزات في تطبيقنا <strong>معك</strong></h4>
+        </div>
+        <ion-item class="active">
+          <ion-fab-button size="small" class="active-">
+            <ion-icon name="bulb-outline" color="light"></ion-icon>
+          </ion-fab-button>
+          <ion-label>
+            اختر الشخص المحدد مع الخيارات التي تريدها
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-fab-button size="small">
+            <ion-icon name="pin-outline" color="light"></ion-icon>
+          </ion-fab-button>
+          <ion-label>
+            المسافات البعيدة والقريبة
+          </ion-label>
+        </ion-item>
+
+        <ion-item class="active">
+          <ion-fab-button size="small" class="active">
+            <ion-icon name="albums-outline" color="light"></ion-icon>
+          </ion-fab-button>
+          <ion-label>
+            خيارات متعددة
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-fab-button size="small">
+            <ion-icon name="cash-outline" color="light"></ion-icon>
+          </ion-fab-button>
+          <ion-label>
+            توفير المزيد من المال
+          </ion-label>
+        </ion-item>
+
+      </ion-list>
+
+    </div> -->
+    <!-- <div *ngIf="currentUser == null">
+
+      <ion-item lines="none" color="tertiary" class="login" (click)="pushLogin()">
+        <ion-label>انضم إلينا الآن</ion-label>
+        <ion-fab-button color="light" size="small">
+  
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-item>
+    </div> -->
+  </div>
+</ion-content>

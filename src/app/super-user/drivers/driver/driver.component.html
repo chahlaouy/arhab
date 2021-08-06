@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="tertiary" dir="ltr">
+    <ion-buttons slot="start">
+      <ion-back-button text="عودة"></ion-back-button>
+    </ion-buttons>
+    <ion-title>rides</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let ride of rides$ | async">
+    <ion-card-header>
+      <ion-card-title>
+        {{ride.rideInfo.rideSource.address}} 
+      </ion-card-title>
+      <ion-card-subtitle>
+         {{ride.rideInfo.rideDestination.address}}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label>
+         <span *ngFor="let i of [1, 2, 3, 4]">
+          <ion-icon name="star-outline" color="warning"></ion-icon>
+         </span>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

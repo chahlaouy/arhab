@@ -1,0 +1,18 @@
+ion-toolbar{
+    background: #7842a5;
+}
+ion-card{
+    ion-card-subtitle{
+        color: white;
+        direction: ltr;
+    }
+    --background: #7842a5 !important;
+}
+ion-fab{
+    ion-fab-button{
+        width: 5rem;
+        height: 5rem;
+        --border-radius: 1rem;
+        --background: #7842a5;
+    }
+}

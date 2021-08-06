@@ -1,0 +1,96 @@
+<ion-content [fullscreen]="true" color="light">
+
+  <div class="wrapper">
+    <div class="overlay-wrapper"></div>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-button slot="end" class="box-none mt-3" style="--background: transparent" [routerLink]="['/driver/dashboard']">
+          <ion-icon name="chevron-back" size="large" class="yellow-dark"></ion-icon>
+        </ion-button>
+      </ion-toolbar>
+    </ion-header>
+    <ion-item class="mt-2 mb-5" lines="none">
+      <ion-icon name="car" slot="start" size="small" class="yellow-dark"></ion-icon>
+      <ion-label>
+        <ul>
+          <li>
+            <h2 class="text-xl yellow-dark">معلومات عامة</h2>
+          </li>
+          <li><span class="text-sm yellow-dark">يمكنك تغيير المعلومات الشخصية عن طريق النقر فوق تغيير المعلومات الشخصية </span></li>
+        </ul>
+      </ion-label>
+    </ion-item>
+
+    <ion-card class="main-card mt-5 bg-white">
+      <ion-card-content *ngIf="currentUser" dir="ltr" class="p-0">
+        <ion-item>
+
+          <ion-avatar slot="start">
+            <img src="../../assets/avatar.png">
+          </ion-avatar>
+          <ion-label>
+            <h4 class="text-lg">
+              {{currentUser.username}}
+            </h4>
+            <h6 class="grey-500">
+              {{currentUser.email}}
+            </h6>
+            <h6>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+            </h6>
+          </ion-label>
+        </ion-item>
+
+        <ion-card color="light">
+          <ion-card-content>
+            <div dir="rtl" class="mt-5">
+              <h2 class="text-md grey-700">البريد الإلكتروني</h2>
+              <h2 class="text-md grey-900">{{currentUser.email}}</h2>
+            </div>
+            <div dir="rtl" class="mt-2">
+              <h4 class="text-md grey-700">رقم الهاتف</h4>
+              <h2 class="text-md grey-900">{{currentUser.phone}}</h2>
+            </div>
+            <div dir="rtl" class="mt-2">
+              <h4 class="text-md grey-700">عمر</h4>
+              <h2 class="text-md grey-900">{{currentUser.age}}</h2>
+            </div>
+          </ion-card-content>
+        </ion-card>
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-title>
+              <div class="mt-5 text-md grey-900 text-right">
+                معلومات إضافية
+              </div>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+
+            <form [formGroup]="userAdditionalInformation" (ngSubmit)="onSubmit()" class="mt-5 text-md grey-900"
+              dir="rtl">
+
+              <ion-item>
+                <ion-label slot="start">الصوره الشخصيه</ion-label>
+                <ion-icon lazy="true" slot="end" name="image" color="tertiary"></ion-icon>
+                <input type="file" accept="image/*" style="opacity: 0; position: absolute" name="picture"
+                  formControlName="picture" (change)="getImage($event)">
+              </ion-item>
+              <ion-item>
+                <ion-label>العنوان</ion-label>
+                <input type="text" formControlName="address">
+              </ion-item>
+              <ion-button expand="block" mode="ios" type="submit">
+                موافق
+              </ion-button>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>

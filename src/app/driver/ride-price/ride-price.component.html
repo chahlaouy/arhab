@@ -1,0 +1,136 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title class="grey-100">
+      صفحة التسعير 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class=" bg-white"> 
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{rideSource}}
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-item>
+          <ion-icon name="pin-outline" color="warning" slot="start"></ion-icon>
+          <ion-label>
+            مكان المغادرة
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{rideDestination}}
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-item>
+          <ion-icon name="golf-outline" color="warning" slot="start"></ion-icon>
+          <ion-label>
+            مكان الوصول
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{rideDistanceText}}
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-item>
+          <ion-icon name="analytics-outline" color="warning" slot="start"></ion-icon>
+          <ion-label>
+            المسافة 
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{rideAverageDuration}}
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-item>
+          <ion-icon name="timer-outline" color="warning" slot="start"></ion-icon>
+          <ion-label>
+            متوسط ​​الوقت 
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        للمزيد من المعلومات انقر هنا
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-item>
+          <ion-icon name="cash-outline" color="warning" slot="start"></ion-icon>
+          <ion-label>
+            السعر المسموح للفرد 
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>
+          من
+        </ion-label>
+        <ion-label>
+          {{minPermittedPrice}} RSA
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          إلى
+        </ion-label>
+        <ion-label>{{maxPermittedPrice}} RSA</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-subtitle>
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-item lines="none">
+          <ion-label>
+            <span class="grey-800">أدخل السعر</span>
+          </ion-label>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input placeholder="أدخل السعر بالريال" color="dark" type="number" [(ngModel)]="ridePrice" (ionChange)="priceChange()"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <div class="flex item-center justify-center mt-5" *ngIf="next">
+    <ion-fab>
+      <ion-fab-button class="flex-row" (click)="nextStep()">
+        <ion-icon name="arrow-forward-outline" size="large" ></ion-icon>
+      </ion-fab-button> 
+    </ion-fab>
+  </div> -->
+  <div *ngIf="next">
+    <ion-button color="warning" size="large" expand="block" (click)="nextStep()">تأكيد</ion-button>
+  </div>
+</ion-content> 

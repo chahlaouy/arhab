@@ -1,0 +1,101 @@
+<ion-content [fullscreen]="true">
+  <div id="menu-header">
+  </div>
+  <div id="header-content">
+    <div>
+      <div class="flex">
+        <img src="../assets/carpooling-logo.png" alt="">
+      </div>
+      <ion-label class="ion-text-center">
+      </ion-label>
+    </div>
+  </div>
+
+  <ion-grid>
+    <ion-row *ngIf="authError">
+      <ion-col>
+        <ion-item color="danger" lines="none">
+          <ion-label>خطأ في بيانات الاعتماد</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <form [formGroup]="user" (ngSubmit)="onSubmit()">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>اسم المستخدم</ion-label>
+            <ion-input  formControlName="username"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>جنس</ion-label>
+            <ion-select placeholder="اختر" formControlName="gender">
+              <ion-select-option value="female">امرأة</ion-select-option>
+              <ion-select-option value="male">رجل</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>عمر</ion-label>
+            <ion-input type="number" formControlName="age"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>البريد الإلكتروني</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>رقم الهاتف</ion-label>
+            <ion-input type="number" formControlName="phone"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>كلمه السر</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>تأكيد كلمة المرور</ion-label>
+            <ion-input type="password" formControlName="confirmationPassword"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="mt-5">
+        <ion-col>
+          <ion-button expand="block" mode="ios" type="submit" color="warning">
+            إنشاء حساب جديد
+            <ion-icon name="enter-outline" slot="end"></ion-icon>
+          </ion-button> 
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" mode="ios" color="light" [routerLink]="['/driver/login']">
+            تسجيل الدخول
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

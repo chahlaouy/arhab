@@ -1,0 +1,61 @@
+<ion-content [fullscreen]="true">
+  <div id="menu-header">
+  </div>
+  <div id="header-content">
+    <div>
+      <div class="flex">
+        <img src="../assets/carpooling-logo.png" alt="">
+      </div>
+      <ion-label class="ion-text-center">
+      </ion-label>
+    </div>
+  </div>
+
+  <ion-grid>
+    <form [formGroup]="user" (ngSubmit)="onSubmit()">
+      
+      <ion-grid>
+        <ion-row *ngIf="authError">
+          <ion-col>
+            <ion-item color="danger" lines="none">
+              <ion-label>خطأ في بيانات الاعتماد</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>اسم المستخدم</ion-label>
+            <ion-input  formControlName="username"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>كلمه السر</ion-label>
+            <ion-input formControlName="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="mt-5">
+        <ion-col>
+          <ion-button expand="block" mode="ios" color="warning" type="submit">
+            تسجيل الدخول
+            <ion-icon name="enter-outline" slot="end"></ion-icon>
+          </ion-button> 
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" mode="ios" color="light" [routerLink]="['/driver/register']">
+            إنشاء حساب جديد
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+
+  
+</ion-content>

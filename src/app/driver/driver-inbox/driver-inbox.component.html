@@ -1,0 +1,31 @@
+<ion-content [fullscreen]="true" color="light">
+
+  <div class="wrapper">
+    <div class="overlay-wrapper"></div>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-button slot="end" class="box-none mt-3" style="--background: transparent" [routerLink]="['/user/dashboard']">
+          <ion-icon name="chevron-back" size="large" class="yellow-dark"></ion-icon>
+        </ion-button>
+      </ion-toolbar>
+    </ion-header>
+    <ion-item class="mt-2 mb-5" lines="none">
+      <ion-icon name="chatbubble" slot="start" size="small" class="yellow-dark"></ion-icon>
+      <ion-label>
+        <ul>
+          <li>
+            <h2 class="text-xl yellow-dark">صندوق الرسائل</h2>
+          </li>
+          <li><span class="text-sm yellow-dark">صفحة الرسائل</span></li>
+        </ul>
+      </ion-label>
+    </ion-item>
+
+    <ion-card class="main-card mt-5">
+      <ion-card-content>
+        <h1 class="text-lg grey-900">لا يوجد رساىل بعد</h1>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>

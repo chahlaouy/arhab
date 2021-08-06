@@ -1,0 +1,31 @@
+<ion-content [fullscreen]="true" color="light">
+
+  <div class="wrapper">
+    <div class="overlay-wrapper"></div>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-button slot="end" class="box-none mt-3" style="--background: transparent" [routerLink]="['/driver/dashboard']">
+          <ion-icon name="chevron-back" size="large" class="yellow-dark"></ion-icon>
+        </ion-button>
+      </ion-toolbar>
+    </ion-header>
+    <ion-item class="mt-2 mb-5" lines="none">
+      <ion-icon name="document-text" slot="start" size="small" class="yellow-dark"></ion-icon>
+      <ion-label>
+        <ul>
+          <li>
+            <h2 class="text-xl yellow-dark">تقييماتي</h2>
+          </li>
+          <li><span class="text-sm yellow-dark">صفحة التقييمات</span></li>
+        </ul>
+      </ion-label>
+    </ion-item>
+
+    <ion-card class="main-card mt-5">
+      <ion-card-content>
+        <h1 class="text-lg grey-900">لا يوجد تقييم بعد</h1>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>

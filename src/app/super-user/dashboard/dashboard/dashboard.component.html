@@ -1,0 +1,109 @@
+<ion-content [fullscreen]="true" color="light">
+  <div class="header">
+    <div class="content">
+      <ion-grid>
+        <ion-row>
+
+          <ion-col class="flex">
+            <div>
+              <h2>
+                
+              </h2>
+             
+            </div>
+          </ion-col>
+
+          <ion-col class="flex">
+            
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+      
+      
+    </div>
+  </div>
+  <div class="main-content-app">
+    
+    <div class="wrapper">
+      <ion-card>
+        <ion-card-content>
+          <ion-item>
+            <ion-grid>
+  
+  
+  
+              <ion-row class="ion-text-center">
+  
+                <ion-col>
+                  <div class="flex">
+                    <ion-fab-button color="light" type="button">
+                      <ion-icon name="apps" color="primary"></ion-icon>
+                    </ion-fab-button>
+                  </div>
+                  <h3>  لوحتي </h3>
+                </ion-col>
+  
+                <ion-col>
+                  <div class="flex" [routerLink]="['/admin/riders/rider-list']">
+                    <ion-fab-button color="light" type="button">
+                      <ion-icon name="body" color="tertiary"></ion-icon>
+                    </ion-fab-button>
+                  </div>
+                  <h3>قائمة الركاب</h3>
+                </ion-col>
+  
+                <ion-col>
+  
+                  <div class="flex" [routerLink]="['/admin/drivers/driver-list']">
+                    <ion-fab-button color="light" type="button">
+                      <ion-icon name="car-sport" class="pink"></ion-icon>
+                    </ion-fab-button>
+                  </div>
+                  <h3>قائمة السائقين</h3>
+                </ion-col>
+  
+              </ion-row>
+  
+  
+              <ion-row class="ion-text-center mt">
+  
+                <ion-col>
+                  <div class="flex">
+                    <ion-fab-button color="light" type="button">
+                      <ion-icon name="document-text" class="blue-light"></ion-icon>
+                    </ion-fab-button>
+                  </div>
+                  <h3>المنشورات</h3>
+                </ion-col>
+  
+                <ion-col>
+                  <div class="flex">
+                    <ion-fab-button color="light" type="button">
+                      <ion-icon name="hand-left" color="danger"></ion-icon>
+                    </ion-fab-button>
+                  </div>
+                  <h3>المخالفات</h3>
+                </ion-col>
+  
+                <ion-col>
+  
+                  <div class="flex">
+                    <ion-fab-button color="light" type="button">
+                      <ion-icon name="person" class="orange"></ion-icon>
+                    </ion-fab-button>
+                  </div>
+                  <h3>الملف الشخصي</h3>
+                </ion-col>
+  
+              </ion-row>
+  
+            </ion-grid>
+          </ion-item>
+         
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+  </div>
+</ion-content>

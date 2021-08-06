@@ -1,0 +1,78 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
+ion-app {
+    // --ion-background-color: transparent !important;
+    direction: rtl;
+    --ion-font-family: 'Tajawal', sans-serif; 
+}
+
+.alert-wrapper{
+    --background: #fff; 
+}
+
+ion-menu{
+    ion-content{
+        background: #f0f0f0;
+    }
+}
+
+#menu-header{
+    height: 220px;
+    width: 350px;
+    background: #7842a5;
+    box-shadow: 0px 1px 10px rgba(180, 54, 244, 0.5);
+    transform: rotate(-30deg);
+    border-radius: 10px 10px 10px 50px;
+    margin: -60px 0px 60px -18px
+}
+
+#header-content{
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 80px;
+        height: 80px;
+        border-radius: 80%;
+        border: 7px solid #a15ed8;
+        margin-right: 14px;
+    }
+    h2 {
+        font-weight: 300;
+        color: #fff;
+    }
+    p{
+        font-size: 12px;
+        color: #e4e4e4;
+        font-weight: 100;
+        letter-spacing: 0.4px;
+    }
+}
+
+.btn{
+    font-weight: 300;
+    ion-button{
+        --background: #e8b205;
+        --box-shadow:none;
+    }
+}
+
+.menu-items {
+    margin-top: 20px;
+    ion-item {
+        margin-bottom: 10px;
+        padding-left: 20px;
+    }
+    ion-icon{
+        color: #86979f;
+    }
+   
+}
+
+ion-card.bg-main{
+    background: #7842a5;
+}

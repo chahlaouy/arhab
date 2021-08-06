@@ -1,0 +1,74 @@
+<ion-content [fullscreen]="true">
+  <div id="menu-header">
+  </div>
+  <div id="header-content">
+    <div>
+      <div class="flex">
+        <img src="../assets/carpooling-logo.png" alt="">
+      </div>
+      <ion-label class="ion-text-center">
+        <!-- <h1> إرحب </h1> -->
+      </ion-label>
+    </div>
+  </div>
+
+  <ion-grid>
+    <form [formGroup]="user" (ngSubmit)="onSubmit()">
+      <!-- <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <h2>صفحة تسجيل الدخول</h2>
+          </ion-item>
+        </ion-col>
+      </ion-row> -->
+      <!-- <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label>الرجاء إدخال بيانات الاعتماد الخاصة بك</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row> -->
+      <ion-grid>
+        <ion-row *ngIf="authError">
+          <ion-col>
+            <ion-item color="danger" lines="none">
+              <ion-label>خطأ في بيانات الاعتماد</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>اسم المستخدم</ion-label>
+            <ion-input  formControlName="username"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>كلمه السر</ion-label>
+            <ion-input formControlName="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="mt-5">
+        <ion-col>
+          <ion-button expand="block" color="warning" mode="ios" type="submit">
+            تسجيل الدخول
+            <ion-icon name="enter-outline" slot="end"></ion-icon>
+          </ion-button> 
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" mode="ios" color="light" [routerLink]="['/passenger/register']">
+            إنشاء حساب جديد
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+  
+</ion-content>

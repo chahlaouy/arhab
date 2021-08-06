@@ -1,0 +1,177 @@
+.box-none{
+    --box-shadow: none !important
+}
+.wrapper{ 
+    position: relative;
+    // background: url(../../assets/carpooling-bg.jpg) no-repeat center center/cover;
+    .overlay-wrapper{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #ecececc0;
+    }
+    ion-card.main-card{
+        --background: #7842a5 !important;
+        // --background: linear-gradient(90deg, #6370ff 0%, #3932c0 100%);
+        padding: 0 !important;
+        margin: 20px 0px !important;
+        box-shadow: 0px 1px 10px #e6e6e6;
+        border-radius: 20px;
+        ion-card-content.card-content-no-padding{
+            padding: 0;
+        }
+        ion-card.card-img{
+            // box-shadow:none !important;
+            background: #f2f2f2;
+            ion-card-content{
+                padding: 0 ;
+            }
+            img{
+                border-radius: 5px;
+            }
+        }
+    }
+    ion-card.one{
+        position: relative;
+        // background: url(../../assets/carpooling-bg.jpg) no-repeat center center/cover;
+        border-radius: 20px;
+        // box-shadow: 0px 1px 10px #3932c0 ;
+        .overlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #f5f5f5de;
+        }
+        ion-button{
+            --background: #f26dff;
+        }
+       
+    }
+
+    ion-chip{
+        --background: transparent
+    }
+    div.not{
+        text-align: center;
+        border-radius: 20px;
+        padding: 5px 0;
+        margin: 20px 15px;
+        color: #454545
+    }
+    .flex{
+        display: flex;
+        // align-items: center;
+        color: #000;
+    }
+    .flex-inbetween{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        ion-label{
+            width: 50px;
+            overflow: ellipsis;
+            white-space: no-wrap
+        }
+    }
+    .features {
+        ion-fab-button{
+            --background: #f26dff;
+            // --box-shadow: none;
+        }
+        ion-fab-button.active{
+            --background: #ffc409;
+            // --box-shadow: none;
+        }
+        ion-fab-button.active-{
+            --background: #4f51e1d0;
+            // --box-shadow: none;
+        }
+        ion-item{
+            margin: 0 10px;
+        }
+        ion-item.active{
+            // box-shadow: 0px 1px 10px #a0a0a0;
+            --background: #fff;
+            border-radius: 10px;
+            
+        }
+    }
+    .see-more{
+        ion-label{
+            color: #f2f2f2
+        }
+    }
+    
+}
+
+ion-searchbar{
+    padding: 0;
+    margin-top: 20px;
+    --background: #cecece;
+    --box-shadow:none !important
+}
+ion-item.login{
+    border-radius: 10px;
+}
+
+
+
+.alert-wrapper{
+    --background: #fff;
+}
+
+ion-menu{
+    ion-content{
+        background: #f0f0f0;
+    }
+}
+ion-toolbar{
+    color: #f2f2f2;
+    height: 350px;
+    width: 100%;
+    background: #7842a5 !important;
+    // background: #7590d6;
+    // background: linear-gradient(-90deg, #f581ff 0%, #4d71d7 100%);
+    // box-shadow: 0px 1px 10px rgba(98, 140, 255, .5);
+    border-radius: 0px 0px 0px 70px;
+}
+ul.list-rides{
+    direction: rtl;
+    position: relative;
+
+    li:first-child::before{
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        // background-color: #5356e6;
+        border: 1px solid #7842a5;
+        top: 33px;
+        right: -8px;
+        border-radius: 100%;
+    }
+    li:last-child::before{ 
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border: 1px solid #7842a5;
+        background-color: #7842a5;
+        bottom: 29px;
+        right: -8px;
+        border-radius: 100%;
+    }
+}
+ul.list-rides::before{
+    content: "";
+    position: absolute;
+    height: 40px;
+    top: 56px;
+    right: -2px;
+    border: 1px dashed #7842a5;
+}
+

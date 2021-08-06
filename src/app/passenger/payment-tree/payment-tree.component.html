@@ -1,0 +1,61 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title class="grey-100">
+      طرق الدفع
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light" dir="ltr">
+  <div class="flex item-center" style="height: 100%; width: 100%;">
+    <div style="width: 100%;">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>
+            <ion-item>
+              <ion-icon name="card" slot="start" color="danger"></ion-icon>
+              <ion-label class="">master card</ion-label>
+            </ion-item>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="block" color="warning" [routerLink]="['/payment/master-card']">
+            ادفع الان
+          </ion-button>
+         
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>
+            <ion-item>
+              <ion-icon name="card" slot="start" color="warning"></ion-icon>
+              <ion-label class="">Visa card</ion-label>
+            </ion-item>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="block" color="warning" [routerLink]="['/payment/visa-card']">
+            ادفع الان
+          </ion-button>   
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>
+            <ion-item>
+              <ion-icon name="card" slot="start" color="tertiary"></ion-icon>
+              <ion-label class="">Mada</ion-label>
+            </ion-item>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="block" color="warning" [routerLink]="['/payment/mada']">
+            ادفع الان
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content> 
+

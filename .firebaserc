@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "carpooling-7d926": {
+      "hosting": {
+        "app": [
+          "carpooling-7d926"
+        ]
+      }
+    }
+  }
+}

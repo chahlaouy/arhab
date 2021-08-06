@@ -1,0 +1,30 @@
+ion-toolbar{
+    background: #fff;
+    border: 1px solid #7842a5;
+    input{
+        border: none;
+        padding: 12px;
+        width: 100%;
+        outline: none;
+    }
+}
+
+agm-map {
+    height: 100%;
+}
+input{
+    box-shadow: none !important;
+    background: white ! important;
+    color: rgb(11, 11, 11);
+}
+ion-fab{
+    position: fixed;
+    bottom: 1rem;
+    left: 40%;
+    ion-fab-button{
+        width: 5rem;
+        height: 5rem;
+        --border-radius: 1rem;
+        --background: #7842a5;
+    }
+}

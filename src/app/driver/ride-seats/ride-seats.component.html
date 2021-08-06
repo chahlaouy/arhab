@@ -1,0 +1,34 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title class="grey-100">
+      عدد المقاعد
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <div class="flex item-center" style="height: 100%; width: 100%;">
+    <div style="width: 100%;">
+      <ion-item *ngIf="error" color="danger">
+        <ion-label>
+          {{error}}
+        </ion-label>
+      </ion-item>
+      <ion-item class="mt-5">
+        <ion-label>عدد المقاعد</ion-label>
+        <ion-select placeholder="أختر" [(ngModel)]="numberOfSeats">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+  </div>
+  <ion-fab>
+    <ion-fab-button class="flex-row" (click)="nextStepRidePrice()">
+      <ion-icon name="arrow-forward-outline" size="large" ></ion-icon>
+    </ion-fab-button> 
+  </ion-fab>
+</ion-content> 
+
+

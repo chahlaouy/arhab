@@ -1,0 +1,40 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title class="grey-100">
+      تاريخ المغادرة
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <div class="flex item-center" style="height: 100%; width: 100%;">
+    <div style="width: 100%;">
+      <ion-item>
+        <ion-icon color="tertiary" name="timer-outline" slot="start"></ion-icon>
+        <ion-label>
+          متى تريد المغادرة
+        </ion-label>
+      </ion-item>
+      <ion-item color="danger" *ngIf="error">
+        <ion-label>
+          {{error}}
+        </ion-label> 
+      </ion-item>
+      <ion-item class="mt-5">
+          <ion-label> اليوم والشهر </ion-label>
+          <ion-datetime value="01-21"
+          [dayShortNames]="customDayShortNames"
+          displayFormat="DDD. MMM DD"
+          monthShortNames="January, February, March, April, May, June, July, August, September, October, November, December" [pickerOptions]="customPickerOptions"></ion-datetime>
+          
+          <!-- <ion-datetime displayFormat="MM DD" placeholder="حدد التاريخ"></ion-datetime> -->
+      </ion-item>
+    </div>
+  </div>
+  <ion-fab>
+    <ion-fab-button class="flex-row" (click)="nextStepRidePrice()">
+      <ion-icon name="arrow-forward-outline" size="large" ></ion-icon>
+    </ion-fab-button> 
+  </ion-fab>
+</ion-content> 
+

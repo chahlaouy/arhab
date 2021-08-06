@@ -1,0 +1,89 @@
+<ion-content [fullscreen]="true" color="light">
+
+  <div class="wrapper">
+    <div class="overlay-wrapper"></div>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-button slot="end" class="box-none mt-3" style="--background: transparent"
+          [routerLink]="['/driver/dashboard']">
+          <ion-icon name="chevron-back" size="large" class="yellow-dark"></ion-icon>
+        </ion-button>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-item class="mt-2 mb-5" lines="none">
+      <ion-icon name="car-sport-outline" slot="start" size="small" class="yellow-dark"></ion-icon>
+      <ion-label>
+        <ul>
+          <li>
+            <h2 class="text-xl yellow-dark">الرحلات</h2>
+          </li>
+          <li><span class="text-sm yellow-dark">صفحة الرحلات</span></li>
+        </ul>
+      </ion-label>
+    </ion-item>
+
+    <ion-card class="main-card mt-5 bg-white" dir="ltr">
+      <ion-card-content class="p-0">
+        <ion-item *ngIf="!rides">
+          <ion-label>
+            <h1 class="text-lg grey-900">لا يوجد رحلات بعد</h1>
+          </ion-label>
+        </ion-item>
+        <div *ngIf="rides">
+          <ion-card *ngFor="let ride of rides" color="light">
+            <ion-card-header>
+              <ion-card-subtitle>
+                {{ride.rideInfo.rideDate.rideDayAndMonth.day}}, {{ride.rideInfo.rideDate.rideDayAndMonth.month}}
+                
+              </ion-card-subtitle>
+              <ion-card-title>
+                {{ride.rideInfo.rideNumberOfSeats}} * seats
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content> 
+
+              <div class="flex justify-between item-center">
+                <ul class="list-rides">
+                  <li class="grey-700 py-2">
+                    <ion-item>
+                      <ion-label>
+                        {{ride.rideInfo.rideSource.locality}}, {{ride.rideInfo.rideSource.adminAreaLevel1}}
+                        <span
+                          style="color: rgb(86, 97, 252)">{{ride.rideInfo.rideDate.rideHour.hour}}:{{ride.rideInfo.rideDate.rideHour.minute}}</span>
+                      </ion-label>
+                    </ion-item>
+                  </li>
+                  <li class="grey-700 py-2">
+                    <ion-item>
+                      <ion-label>
+                        {{ride.rideInfo.rideDestination.locality}}, {{ride.rideInfo.rideDestination.adminAreaLevel1}}
+                      </ion-label>
+                    </ion-item>
+  
+                  </li>
+                </ul>
+  
+              </div>
+              <div class="flex item-center justify-end">
+                <div class="flex justify-start items-start">
+                  <h1 class="grey-900 text-xl">
+                    {{ride.rideInfo.ridePrice}}
+                  </h1>
+                  <span class="grey-700">/RSA</span>
+                </div>
+              </div>
+
+            </ion-card-content>
+          </ion-card>
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+    <ion-fab>
+      <ion-fab-button class="flex-row" [routerLink]="['/driver/add/ride-source']">
+        <ion-icon name="add-circle-outline" size="large"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>

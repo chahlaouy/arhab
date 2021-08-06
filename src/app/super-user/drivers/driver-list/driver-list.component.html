@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="tertiary" dir="ltr">
+    <ion-buttons slot="start">
+      <ion-back-button text="عودة"></ion-back-button>
+    </ion-buttons>
+    <ion-title>قائمة السائقين</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content [fullscreen]="true" color="light">
+  <ion-fab vertical="top" horizontal="start" slot="fixed" (click)="reload()">
+    <ion-fab-button>
+      <ion-icon name="refresh-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-card *ngFor="let driver of drivers$ | async">
+    <ion-card-header>
+      <ion-card-title>
+        {{driver.username}} 
+      </ion-card-title>
+      <ion-card-subtitle>
+        {{driver.email}}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-icon name="options-outline" slot="end" color="tertiary"></ion-icon>
+        <ion-icon name="trash-outline" slot="end" color="danger"></ion-icon>
+        <ion-label>
+         <span *ngFor="let i of [1, 2, 3, 4]">
+          <ion-icon name="star-outline" color="warning"></ion-icon>
+         </span>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-button routerLink="/admin/drivers/{{driver.id}}">view</ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+
+</ion-content>

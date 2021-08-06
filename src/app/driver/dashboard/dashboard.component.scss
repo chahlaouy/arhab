@@ -1,0 +1,52 @@
+
+.main-content-app{
+    hr{
+        height: 0px; 
+        border: 1px solid #ccc;
+    }
+    .wrapper{
+        ion-card{
+            --background: #fff;
+            margin: -50px 20px;
+            border-radius: 20px;
+            box-shadow: none !important;
+        }
+        h3{
+            margin-top: 20px;
+            font-weight: bold;
+            color: #7b7b7b;
+        }
+        ion-fab-button{
+            --box-shadow: none !important
+        }
+        .pink{
+            color: rgb(236, 84, 236);
+        }
+        .blue-light{
+            color: #00bdf1;
+        }
+        .orange{
+            color: #ff834e; 
+        }     
+    }
+}
+.header{
+    height: 400px;
+    width: 100%;
+    background: #7842a5;
+    box-shadow: 0px 1px 10px rgba(109, 25, 244, 0.5);
+    border-radius: 20px;
+    margin: -140px 0px 0px 0px;
+    .content{
+        width: 100%;
+        position: absolute;
+        margin-top: 70px;
+        top: 0;
+        left: 0;
+        ion-button{
+            --box-shadow: none !important;
+            // --background: #00ceff;
+            --border-radius: 10px;
+        }
+    }
+}

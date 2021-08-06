@@ -1,0 +1,62 @@
+.wrapper{
+    position: relative;
+    background: #7842a5;
+    // background: linear-gradient(90deg, #6370ff 0%, #3932c0 100%);
+    ion-card.main-card{
+        --background: #f2f2f2;
+        --padding: 0 !important;
+        margin: 0px 0px 0px 0px !important;
+        box-shadow: 0px 1px 10px #7842a5;
+        border-radius: 20px;
+        ion-card{
+            box-shadow: none !important;
+        }
+        border-bottom-right-radius: 0  !important;    
+        border-bottom-left-radius: 0  !important;     
+    }
+}
+ion-fab{
+    position: fixed;
+    bottom: 1rem;
+    left: 40%;
+    ion-fab-button{
+        width: 5rem;
+        height: 5rem;
+        --border-radius: 1rem;
+        --background: #7842a5;
+    }
+}
+ul.list-rides{
+    position: relative;
+
+    li:first-child::before{
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        // background-color: #5356e6;
+        border: 1px solid #7842a5;
+        top: 25px;
+        left: -9px;
+        border-radius: 100%;
+    }
+    li:last-child::before{ 
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border: 1px solid #7842a5;
+        background-color: #7842a5;
+        bottom: 35px;
+        left: -9px;
+        border-radius: 100%;
+    }
+}
+ul.list-rides::before{
+    content: "";
+    position: absolute;
+    height: 40px;
+    top: 50px;
+    left: -2px;
+    border: 1px dashed #7842a5;
+}

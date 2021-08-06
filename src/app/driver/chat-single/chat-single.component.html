@@ -1,0 +1,40 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-button [routerLink]="['/driver/requests']" color="tertiary" slot="end">عودة</ion-button>
+    <ion-title class="grey-100">
+      {{receiverName}} 
+    </ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content [fullscreen]="true" class="bg-white">
+  <div *ngFor="let message of allMessages" class=" mb-5">
+    
+    <div class="flex item-center justify-center">
+      <div class="timestamp">
+        {{message.timestamp}}
+      </div>
+    </div>
+    
+    <div class="flex item-center justify-start" *ngIf="message.driverName">
+      <div class="sended-message">
+        {{message.message}}
+      </div>
+    </div>
+    <div class="flex item-center justify-end" *ngIf="message.passengerName">
+      <div class="received-message">
+        {{message.message}}
+      </div>
+    </div>
+
+  </div>
+  <div class="outer-box">
+    <div class="inner-box">
+
+      <label (click)="send()">
+        إرسال
+      </label>
+      <input [(ngModel)]="message" placeholder="اكتب رسالة">
+    </div>
+  </div>
+</ion-content> 

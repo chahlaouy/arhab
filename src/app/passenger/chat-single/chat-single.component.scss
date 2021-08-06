@@ -1,0 +1,52 @@
+ion-toolbar{
+    background: #7842a5;
+}
+
+input{
+    border: none;
+    padding: 12px;
+    width: 100%;
+    outline: none;
+    background: #efefef;
+    border: 1px solid  #7842a5;
+}
+div.outer-box{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    .inner-box{
+        position: relative;
+        label{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: #7842a5;
+            padding: 12px 20px;
+            border: 1px solid  #7842a5;
+            color: #f2f2f2;
+        }
+    }
+}
+.received-message, .sended-message{
+    padding: 20px;
+    border-radius: 15px;
+    margin: 10px 0;
+    max-width: 200px;
+    color: white;
+}
+.received-message{
+    border-bottom-left-radius: 0px;
+    background: #e8e7e7;
+    color: #454545;
+}
+.sended-message{
+    border-bottom-right-radius: 0px;
+    background: #7842a5;
+}
+
+.timestamp{
+    padding: 5px 10px;
+    color: #454545;
+    font-size: 14px;
+}

@@ -1,0 +1,134 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar translucent>
+    <ion-buttons dir="ltr">
+      <ion-menu-button menu="main-menu" color="light"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <div class="header">
+    <div class="content"> 
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label class="grey-100">العدد الجملي للحجوزات</ion-label>
+              <ion-badge slot="end" color="warning">10</ion-badge>
+            </ion-item>
+            <ion-item >
+              <ion-label class="grey-100">العدد الجملي للرحلات</ion-label>
+              <ion-badge slot="end" color="warning">14</ion-badge>
+            </ion-item>
+          </ion-col>
+          </ion-row>
+          <ion-row>
+          <ion-col>
+            <ion-button expand="block" color="warning" [routerLink]="['/driver/rides']">
+              إحجز الان
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <!-- <ion-grid>
+        <ion-row>
+          
+        </ion-row>
+      </ion-grid>
+      <ion-grid class="mt-5"> 
+        <ion-row>
+          <ion-col class="flex">
+           
+          </ion-col>
+          <ion-col>
+           
+          </ion-col>
+
+        </ion-row>
+      </ion-grid> -->
+      
+    </div>
+  </div>
+  <div class="main-content-app">
+
+    <div class="wrapper">
+      <ion-card>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row class="ion-text-center">
+              <ion-col>
+                <div class="flex justify-center items-center">
+                  <ion-fab-button color="light" type="button" [routerLink]="['/home']">
+                    <ion-icon name="home" class="yellow-600"></ion-icon>
+                  </ion-fab-button>
+                </div>
+                <h3> الصفحة الريسية</h3>
+              </ion-col>
+              <ion-col>
+                <div class="flex justify-center items-center">
+                  <ion-fab-button color="light" type="button" [routerLink]="['/passenger/chat-interface']">
+                    <ion-icon name="car-sport-outline" class="blue-600"></ion-icon>
+                  </ion-fab-button>
+                </div>
+                <h3>الحجوزات</h3>
+              </ion-col>
+              <ion-col>
+                <div class="flex justify-center items-center">
+                  <ion-fab-button color="light" type="button" [routerLink]="['/passenger/info']">
+                    <ion-icon name="person" color="primary"></ion-icon>
+                  </ion-fab-button>
+                </div>
+                <h3> معلومات عامة </h3>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-grid>
+            <ion-row class="ion-text-center mt-4">
+              <ion-col>
+                <div class="flex justify-center items-center">
+                  <ion-fab-button color="light" type="button">
+                    <ion-icon name="key" class="orange"></ion-icon>
+                  </ion-fab-button>
+                </div>
+                <h3>تغيير كلمة المرور</h3>
+              </ion-col>
+              <ion-col>
+                <div class="flex justify-center items-center">
+                  <ion-fab-button color="light" type="button">
+                    <ion-icon name="trash" color="danger"></ion-icon>
+                  </ion-fab-button>
+                </div>
+                <h3>حذف الحساب</h3>
+              </ion-col>
+              <ion-col (click)="onLogout()">
+                <div class="flex justify-center items-center">
+                  <ion-fab-button color="light" type="button">
+                    <ion-icon name="exit" color="primary"></ion-icon>
+                  </ion-fab-button>
+                </div>
+                <h3> تسجيل خروج </h3>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-grid>
+            <ion-row class="ion-text-center mt-4">
+              <ion-col>
+                <div class="flex justify-center items-center">
+                  <ion-fab-button color="light" type="button" [routerLink]="['/passenger/payment-tree']">
+                    <ion-icon name="card" class="orange"></ion-icon>
+                  </ion-fab-button>
+                </div>
+                <h3>دفع</h3>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+
+  </div>
+</ion-content>

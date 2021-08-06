@@ -1,0 +1,203 @@
+<ion-content [fullscreen]="true">
+
+  <div class="wrapper">
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <div class="mx-2 mt-2">
+          <ion-buttons dir="ltr" (click)="backRidesList()">
+            <ion-icon name="chevron-back" size="large" class="yellow-dark"></ion-icon>
+          </ion-buttons>
+        </div>
+
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-item class="mt-5" dir="ltr">
+      <ion-label>
+        <h1 class="text-2xl yellow-dark">{{ ride.rideInfo.rideSource.locality }}</h1>
+      </ion-label>
+      <ion-icon name="pin-outline" slot="start" size="small" class="yellow-dark"></ion-icon>
+    </ion-item>
+    <ion-item lines="none" dir="ltr">
+      <ion-label>
+        <h1 class="text-2xl yellow-dark">{{ ride.rideInfo.rideDestination.locality }}</h1>
+      </ion-label>
+      <ion-icon name="golf-outline" slot="start" size="small" class="yellow-dark"></ion-icon>
+    </ion-item>
+
+    <ion-item class="mt-2" lines="none" dir="ltr">
+      <ion-icon name="timer-outline" slot="start" size="small" class="yellow-dark"></ion-icon>
+      <ion-label>
+        <ul>
+          <li>
+            <h4 class="text-lg yellow-dark"> {{ ride.rideInfo.rideDate.rideDayAndMonth.day }},
+              {{ ride.rideInfo.rideDate.rideDayAndMonth.month }} </h4>
+          </li>
+          <li>
+            <span class="yellow-dark"> {{ ride.rideInfo.rideAverageDuration.text }} </span>
+            <span class="text-sm yellow-dark">متوسط ​​مدة الوصول</span>
+          </li>
+        </ul>
+      </ion-label>
+    </ion-item>
+
+    <ion-card class="main-card bg-white" dir="ltr">
+      <ion-card-header>
+        <ion-card-subtitle>
+
+        </ion-card-subtitle>
+        <ion-card-title class="text-right">
+          التفاصيل
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="mb-5 p-0">
+
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-title></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src="../../assets/avatar.png">
+              </ion-avatar>
+              <ion-label>
+                <h4 class="text-md">
+                  {{ride.userInfo.userExtraInfo.username}}
+                </h4>
+                <h6 class="grey-500">
+                  {{ride.userInfo.userExtraInfo.age}} y/o
+                </h6>
+                <h6>
+                  <ion-icon name="star" color="warning"></ion-icon>
+                  <ion-icon name="star" color="warning"></ion-icon>
+                  <ion-icon name="star" color="warning"></ion-icon>
+                  <ion-icon name="star" color="warning"></ion-icon>
+                </h6>
+              </ion-label>
+            </ion-item>
+            <div class="flex justify-between item-center">
+              <ul class="list-rides">
+                <li class="grey-700 py-2">
+                  <ion-item>
+                    <ion-label>
+                      {{ride.rideInfo.rideSource.locality}}, {{ride.rideInfo.rideSource.adminAreaLevel1}}
+                      <span
+                        style="color: rgb(86, 97, 252)">{{ride.rideInfo.rideDate.rideHour.hour}}:{{ride.rideInfo.rideDate.rideHour.minute}}</span>
+                    </ion-label>
+                  </ion-item>
+                </li>
+                <li class="grey-700 py-2">
+                  <ion-item>
+                    <ion-label>
+                      {{ride.rideInfo.rideDestination.locality}}, {{ride.rideInfo.rideDestination.adminAreaLevel1}}
+                    </ion-label>
+                  </ion-item>
+
+                </li>
+              </ul>
+
+            </div>
+            <div class="flex item-center justify-end">
+              <div class="flex justify-start items-start">
+                <h1 class="grey-900 text-xl">
+                  {{ride.rideInfo.ridePrice}}
+                </h1>
+                <span class="grey-700">/RSA</span>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-item class="text-right text-md">
+                <ion-label>
+                  <span >عدد المقاعد المتاحة</span>
+                </ion-label>
+              </ion-item>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item class="text-right text-md" lines="none">
+              <ion-icon name="accessibility-outline" color="primary" slot="end"></ion-icon>
+              <ion-label>
+                <span>seat * </span><span class="grey-900 text-md">{{ride.rideInfo.ridePrice}}/RSA</span>
+              </ion-label>
+              <ion-label>
+                <span>{{ride.rideInfo.rideNumberOfSeats}} seats</span>
+              </ion-label>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-item class="text-right text-md">
+                <ion-label>
+                  <span>معلومات إضافية</span>
+                </ion-label>
+              </ion-item>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item class="text-right text-md">
+              <ion-label *ngIf="ride.userInfo.userExtraInfo.userFavorite.music == '1'">نعم</ion-label>
+              <ion-label *ngIf="ride.userInfo.userExtraInfo.userFavorite.music == '0'">لا</ion-label>
+              <ion-label>موسيقى</ion-label>
+            </ion-item>
+            <ion-item class="text-right text-md">
+              <ion-label *ngIf="ride.userInfo.userExtraInfo.userFavorite.smoking=='1'">نعم</ion-label>
+              <ion-label *ngIf="ride.userInfo.userExtraInfo.userFavorite.smoking=='0'">لا</ion-label>
+              <ion-label>التدخين</ion-label>
+            </ion-item>
+            <ion-item class="text-right text-md">
+              <ion-label *ngIf="ride.userInfo.userExtraInfo.userFavorite.pets=='1'">نعم</ion-label>
+              <ion-label *ngIf="ride.userInfo.userExtraInfo.userFavorite.pets=='0'">لا</ion-label>
+              <ion-label>الحيوانات الأليفة</ion-label>
+            </ion-item>
+            <ion-item class="text-right text-md">
+              <ion-label *ngIf="ride.userInfo.userExtraInfo.userFavorite.chat=='1'">نعم</ion-label>
+              <ion-label *ngIf="ride.userInfo.userExtraInfo.userFavorite.chat=='0'">لا</ion-label>
+              <ion-label>دردشة</ion-label>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-item class="text-right text-md">
+                <ion-label>
+                  <span>السيارة</span>
+                </ion-label>
+              </ion-item>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item class="text-right text-md">
+              <ion-label>{{ride.userInfo.userExtraInfo.userCar.brand}} </ion-label>
+              <ion-label>طراز السيارة</ion-label>
+            </ion-item>
+            <ion-item class="text-right text-md mb-5">
+              <ion-label>{{ride.userInfo.userExtraInfo.userCar.model}} </ion-label>
+              <ion-label>مودل السيارة</ion-label>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+        
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button (click)="nextStepRideSeats()">
+      <!-- <ion-icon name="send-outline"></ion-icon> -->
+      <ion-label>حجز</ion-label>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
