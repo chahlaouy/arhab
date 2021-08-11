@@ -53,7 +53,7 @@ export class FirebaseService {
         this.insertDriverData(userCredentials)
           .then(response => {
             localStorage.setItem('userRole', 'driver')
-            this.router.navigate(["/user/dashboard"])
+            this.router.navigate(["/driver/dashboard"])
           })
       })
       .catch(error => { 
@@ -63,11 +63,10 @@ export class FirebaseService {
   }
 
   insertDriverData(userCredentials: firebase.auth.UserCredential) {
-    return this.db.doc(`users/${userCredentials.user.uid}`).set({
+    return this.db.doc(`drivers/${userCredentials.user.uid}`).set({
       gender: this.newDriver.gender,
       username: this.newDriver.username,
       email: this.newDriver.email,
-      picture: this.newDriver.picture,
       phone: this.newDriver.phone,
       age: this.newDriver.age,
     })
@@ -77,7 +76,7 @@ export class FirebaseService {
     return this.angularFireAuth.authState;
   }
   getUser() {
-    return this.db.collection('users').doc(localStorage.getItem('uid')).ref.get();
+    return this.db.collection('drivers').doc(localStorage.getItem('uid')).ref.get();
   }
   signOut() {
     return this.angularFireAuth.signOut().then(() => {

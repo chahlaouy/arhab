@@ -1,0 +1,76 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar translucent>
+    <ion-buttons dir="ltr">
+      <ion-menu-button menu="main-menu" color="light"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <div class="header">
+    <div class="content"> 
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label class="grey-100">العدد الجملي للحجوزات</ion-label>
+              <ion-badge slot="end" color="warning">10</ion-badge>
+            </ion-item>
+            <ion-item >
+              <ion-label class="grey-100">العدد الجملي للرحلات</ion-label>
+              <ion-badge slot="end" color="warning">14</ion-badge>
+            </ion-item>
+          </ion-col>
+          </ion-row>
+          <ion-row>
+          <ion-col>
+            <ion-button expand="block" color="warning" [routerLink]="['/home/rides-list']">
+              إحجز الان
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+      
+    </div>
+  </div>
+  <div class="main-content-app">
+
+    <div class="wrapper">
+      <ion-card>
+        <ion-card-content>
+        
+          <ion-card dir="ltr" color="light">
+            <ion-card-header>
+              <ion-card-subtitle>
+               <ion-item>
+                 <ion-label>رصيدك</ion-label>
+                 <ion-icon name="layers-outline" slot="end"></ion-icon>
+               </ion-item>
+              </ion-card-subtitle>
+              <ion-card-title>
+                
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content> 
+              O,OO
+            </ion-card-content>
+          </ion-card>
+
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-button expand="block" color="warning" [routerLink]="['/home/rides-list']">
+                  سجلي 
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+
+  </div>
+</ion-content>

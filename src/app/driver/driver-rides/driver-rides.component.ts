@@ -33,4 +33,12 @@ export class DriverRidesComponent implements OnInit {
         console.log("Error getting documents: ", error);
     })
   }
+
+
+  deleteRide(uid){
+    // console.log(uid)
+    // this.driverSer.getAllRides().where("userInfo.userUID", "==", localStorage.getItem("uid") ).de
+    
+  }
+
 }

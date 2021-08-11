@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { loadStripe, Stripe } from '@stripe/stripe-js'
-
-import { AngularFireFunctions } from '@angular/fire/functions'
-
-import { environment } from 'src/environments/environment'
-
+import { PaymentService } from '../payment.service';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-paypal',
   templateUrl: './paypal.component.html',
@@ -13,34 +8,44 @@ import { environment } from 'src/environments/environment'
 })
 export class PaypalComponent implements OnInit {
 
-  private stripe: Stripe
-  constructor() {}
+  req: any
+  checkoutId: any
+   
+  constructor(
+    private paymentSer: PaymentService,
+    private http: HttpClient
+  ) {}
 
-  async ngOnInit() {
-    this.stripe = await loadStripe(environment.stripe.testKey)
-    const elements = this.stripe.elements()
-
-    const style = {
-      base: {
-        color: '#32325d',
-        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-        fontSmoothing: 'antialiased',
-        fontSize: (window.innerWidth <= 500) ? '12px' : '16px',
-        '::placeholder': {
-          color: '#aab7c4'
-        }
-      },
-      invalid: {
-        color: '#fa755a',
-        iconColor: '#fa755a'
-      }
-    };
-
-    const card = elements.create('card', { style });
+  ngOnInit() {
+    this.req = this.paymentSer.getPaymentObject()
+    console.log(this.req)
+    this.renderPaymentform()
+  }
 
 
-    card.mount('#card-element');
+  renderPaymentform(){
+    const amount = this.req.numberOfSeats *  this.req.rideInfo.rideInfo.ridePrice
+    this.http.get<any>("http://digigate.tn/checkout?amount=" + amount).subscribe(res => {
+      console.log(res.id)
+      this.checkoutId = res.id
+      this.createForm()
+    })     
+  }
 
+  createForm(){
+    const script = document.createElement("script");
+
+    script.src = `https://test.oppwa.com/v1/paymentWidgets.js?checkoutId=${this.checkoutId}`;
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    const form = document.createElement("form")
+    const formId = document.getElementById("form")
+    form.action = "http://digigate.tn/result";
+    form.setAttribute("class", "paymentWidgets");
+    form.setAttribute("data-brands", "MADA")
+    formId.appendChild(form);
   }
 
 }

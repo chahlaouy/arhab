@@ -58,17 +58,17 @@ export class DriverService {
 
   getCurrentsUserInfo(){
           
-    return this.db.doc(`users/${localStorage.getItem('uid')}`).get()
+    return this.db.doc(`drivers/${localStorage.getItem('uid')}`).get()
   }
 
   addCar(car){
-    return this.db.doc(`users/${localStorage.getItem('uid')}`).update({
+    return this.db.doc(`drivers/${localStorage.getItem('uid')}`).update({
       userCar: car
     })
   }
 
   addFavorite(favorite){ 
-    return this.db.doc(`users/${localStorage.getItem('uid')}`).update({
+    return this.db.doc(`drivers/${localStorage.getItem('uid')}`).update({
       userFavorite: favorite
     }) 
   }
@@ -88,6 +88,7 @@ export class DriverService {
             .add(ride)
             .then(
                 res => {
+                  console.log(res)
                   this.errorConfirmingRide.next('success')
                 }, 
                 err => reject(err)
@@ -160,6 +161,10 @@ export class DriverService {
     return this.db.collection("rides").ref
   }
 
+  deleteDriverRequests(uid){
+    
+    
+  }
 
   updateImageAndAddress(form){
 

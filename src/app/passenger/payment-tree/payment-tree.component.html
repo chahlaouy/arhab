@@ -19,7 +19,7 @@
           </ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
-          <ion-button expand="block" color="warning" [routerLink]="['/payment/master-card']">
+          <ion-button expand="block" color="warning" (click)="setPaymentType()">
             ادفع الان
           </ion-button>
          
